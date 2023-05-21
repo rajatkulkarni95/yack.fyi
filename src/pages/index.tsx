@@ -1,7 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
+import { DownloadLink } from "~/components/Button";
 import Capsule from "~/components/Capsule";
-import { LogoLarge, RightArrow } from "~/svg";
+import { DownloadIcon, LogoLarge, RightArrow } from "~/svg";
 
 type TRelease = {
   version: string;
@@ -33,7 +34,7 @@ export default function Home({
                 }
               />
             </Link>
-            <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold text- bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
+            <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
               Get going faster.
             </h1>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
@@ -42,11 +43,31 @@ export default function Home({
             </p>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
               Your favourite AI assistant now lives in your{" "}
-              <strong className="border-b border-dotted border-slate-500 pb-0.5">
+              <strong className="text-slate-50 border-b border-dotted border-slate-300 pb-0.5">
                 menu bar
               </strong>
               .
             </p>
+            <div className="flex items-center mt-8">
+              <DownloadLink
+                label="for Apple Silicon"
+                subtitle="2020 and later models"
+                icon={
+                  <DownloadIcon className="w-4 h-4 mr-1.5 text-slate-900" />
+                }
+                href={data.downloadLinks.arm}
+              />
+              <DownloadLink
+                label="for Intel Chips"
+                subtitle="earlier models"
+                style="ml-3"
+                icon={
+                  <DownloadIcon className="w-4 h-4 mr-1.5 text-slate-200" />
+                }
+                type="secondary"
+                href={data.downloadLinks.intel}
+              />
+            </div>
           </div>
           <video
             className="w-full mt-8 md:w-3/4 lg:w-3/5 xl:mt-0 xl:w-2/5 rounded-lg"
@@ -82,7 +103,7 @@ export const getStaticProps: GetStaticProps<{
       data: {
         version: latestVersion,
         downloadLinks: {
-          arm: `${process.env.R2_PUBLIC_URL}/${latestVersion}/intel/yack_${latestVersion}_aarch64.dmg`,
+          arm: `${process.env.R2_PUBLIC_URL}/${latestVersion}/arm/yack_${latestVersion}_aarch64.dmg`,
           intel: `${process.env.R2_PUBLIC_URL}/${latestVersion}/intel/yack_${latestVersion}_x64.dmg`,
         },
       },
