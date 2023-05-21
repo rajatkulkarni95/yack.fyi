@@ -20,7 +20,7 @@ export default function Home({
     >
       <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto">
         <div className="flex items-center justify-between">
-          <LogoLarge className="w-20 xl:w-24 h-fit text-white" />
+          <LogoLarge className="w-20 xl:w-24 text-white" />
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">
