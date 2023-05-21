@@ -14,13 +14,11 @@ type TRelease = {
 export default function Home({
   data,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log({ data });
-
   return (
     <main
-      className={`flex min-h-screen flex-col px-4 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
+      className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
     >
-      <section className="w-full xl:w-4/5 2xl:w-3/4 flex flex-col mx-auto">
+      <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto">
         <div className="flex items-center justify-between">
           <LogoLarge className="w-20 xl:w-24 h-fit text-white" />
         </div>
@@ -35,7 +33,7 @@ export default function Home({
                 }
               />
             </Link>
-            <h1 className="text-5xl xl:text-6xl py-2 tracking-tighter text-transparent font-bold text- bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
+            <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold text- bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
               Get going faster.
             </h1>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
@@ -51,7 +49,7 @@ export default function Home({
             </p>
           </div>
           <video
-            className="w-full mt-8 xl:mt-0 xl:w-2/5 rounded-lg"
+            className="w-full mt-8 md:w-3/4 lg:w-3/5 xl:mt-0 xl:w-2/5 rounded-lg"
             autoPlay
             loop
             muted
