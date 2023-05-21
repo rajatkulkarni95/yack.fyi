@@ -53,6 +53,7 @@ export default function Home({
             autoPlay
             loop
             muted
+            playsInline
           >
             <source src="/yack_demo.mp4" type="video/mp4" />
           </video>
