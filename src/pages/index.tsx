@@ -1,6 +1,19 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { LogoLarge } from "~/svg";
 
-export default function Home() {
+type TRelease = {
+  version: string;
+  downloadLinks: {
+    intel: string;
+    arm: string;
+  };
+};
+
+export default function Home({
+  data,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log({ data });
+
   return (
     <main
       className={`flex min-h-screen flex-col py-8 bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
@@ -31,3 +44,31 @@ export default function Home() {
     </main>
   );
 }
+
+export const getStaticProps: GetStaticProps<{
+  data: TRelease;
+}> = async () => {
+  const getUpdaterJson = async () => {
+    const response = await fetch(`${process.env.R2_PUBLIC_URL}/updater.json`);
+    const data = await response.json();
+    return data;
+  };
+
+  const response = await getUpdaterJson();
+
+  let latestVersion = response.version;
+  latestVersion = latestVersion.replace("v", "");
+
+  return {
+    props: {
+      data: {
+        version: latestVersion,
+        downloadLinks: {
+          arm: `${process.env.R2_PUBLIC_URL}/${latestVersion}/intel/yack_${latestVersion}_aarch64.dmg`,
+          intel: `${process.env.R2_PUBLIC_URL}/${latestVersion}/intel/yack_${latestVersion}_x64.dmg`,
+        },
+      },
+    },
+    revalidate: 3600,
+  };
+};
