@@ -1,5 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { LogoLarge } from "~/svg";
+import Link from "next/link";
+import Capsule from "~/components/Capsule";
+import { LogoLarge, RightArrow } from "~/svg";
 
 type TRelease = {
   version: string;
@@ -24,6 +26,15 @@ export default function Home({
         </div>
         <div className="flex items-center justify-between mt-20">
           <div className="flex flex-col justify-start max-w-[640px]">
+            <Link href="/changelog">
+              <Capsule
+                text={`v${data.version} is out! See what's new`}
+                additionalStyles="mb-4 hover:bg-blue-700/20 pointer"
+                icon={
+                  <RightArrow className="w-4 h-4 text-blue-300 group-hover:text-blue-400 ml-2" />
+                }
+              />
+            </Link>
             <h1 className="text-6xl py-2 tracking-tighter text-transparent font-bold text- bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
               Get going faster.
             </h1>
