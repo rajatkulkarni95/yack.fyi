@@ -27,15 +27,15 @@ export default function Home({
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">
-            <Link href="/changelog">
-              <Capsule
-                text={`v${data.version} is out! See what's new`}
-                additionalStyles="mb-2 xl:mb-4 hover:bg-violet-700/20 pointer"
-                icon={
-                  <RightArrow className="w-4 h-4 text-violet-300 group-hover:text-violet-400 ml-2" />
-                }
-              />
-            </Link>
+            {/* <Link href="/changelog"> */}
+            <Capsule
+              text={`v${data.version} is out!`}
+              additionalStyles="mb-2 xl:mb-4 hover:bg-violet-700/20 pointer"
+              icon={
+                <RightArrow className="w-4 h-4 rotate-90 text-violet-300 group-hover:text-violet-400 ml-1" />
+              }
+            />
+            {/* </Link> */}
             <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
               Get going faster.
             </h1>
