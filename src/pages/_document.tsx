@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      <title>Yack</title>
       <body>
         <Main />
         <NextScript />

@@ -2,6 +2,8 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import { DownloadLink } from "~/components/Button";
 import Capsule from "~/components/Capsule";
+import FeatureCard from "~/components/FeatureCard";
+import { features } from "~/data/features";
 import { DownloadIcon, LogoLarge, RightArrow } from "~/svg";
 
 type TRelease = {
@@ -78,6 +80,21 @@ export default function Home({
           >
             <source src="/yack_demo.mp4" type="video/mp4" />
           </video>
+        </div>
+      </section>
+      <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto mt-12 xl:mt-24">
+        <h3 className="text-2xl md:text-4xl w-full font-bold text-transparent text-center bg-clip-text bg-gradient-to-br from-slate-50 to-slate-600">
+          Built with you in mind.
+        </h3>
+        <p className="text-sm md:text-base text-center mt-2 text-slate-300">
+          Yack is purpose-built to help make accessing ChatGPT as easy as
+          possible. Lightweight, fast, and simple.
+        </p>
+
+        <div className="grid md:grid-cols-4 gap-4 md:gap-8 mt-8">
+          {features.map((feature) => (
+            <FeatureCard feature={feature} key={feature.id} />
+          ))}
         </div>
       </section>
     </main>
