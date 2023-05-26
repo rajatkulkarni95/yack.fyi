@@ -21,7 +21,7 @@ export default function Home({
     <main
       className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
     >
-      <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto">
+      <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
         <div className="flex items-center justify-between">
           <LogoLarge className="w-20 xl:w-24 text-white" />
         </div>
@@ -82,7 +82,7 @@ export default function Home({
           </video>
         </div>
       </section>
-      <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto mt-12 xl:mt-24">
+      <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto mt-12 xl:mt-24">
         <h3 className="text-2xl md:text-4xl w-full font-bold text-transparent text-center bg-clip-text bg-gradient-to-br from-slate-50 to-slate-600">
           Built with you in mind.
         </h3>
@@ -91,7 +91,7 @@ export default function Home({
           possible. Lightweight, fast, and simple.
         </p>
 
-        <div className="grid md:grid-cols-4 gap-4 md:gap-8 mt-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-8 mt-8">
           {features.map((feature) => (
             <FeatureCard feature={feature} key={feature.id} />
           ))}
