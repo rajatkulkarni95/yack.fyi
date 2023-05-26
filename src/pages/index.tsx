@@ -97,6 +97,27 @@ export default function Home({
           ))}
         </div>
       </section>
+      <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto my-12 xl:my-24">
+        <h3 className="text-lg md:text-2xl w-full font-bold text-zinc-100 text-center">
+          Wanna get going faster?
+        </h3>
+        <div className="flex items-center mx-auto mt-4">
+          <DownloadLink
+            label="for Apple Silicon"
+            subtitle="2020 and later models"
+            icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-900" />}
+            href={data.downloadLinks.arm}
+          />
+          <DownloadLink
+            label="for Intel Chips"
+            subtitle="earlier models"
+            style="ml-3"
+            icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-200" />}
+            type="secondary"
+            href={data.downloadLinks.intel}
+          />
+        </div>
+      </section>
     </main>
   );
 }
