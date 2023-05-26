@@ -5,34 +5,13 @@
 
 import { TFeature } from "~/data/features";
 
-const colors = [
-  {
-    background: "bg-red-700/10",
-    border: "border-red-500/50",
-    text: "text-red-500",
-  },
-  {
-    background: "bg-green-700/10",
-    border: "border-green-500/50",
-    text: "text-green-500",
-  },
-  {
-    background: "bg-blue-700/10",
-    border: "border-blue-500/50",
-    text: "text-blue-500",
-  },
-  {
-    background: "bg-yellow-700/10",
-    border: "border-yellow-500/50",
-    text: "text-yellow-500",
-  },
-];
-
 const FeatureCard = ({ feature }: { feature: TFeature }) => {
   return (
-    <div className="flex flex-col p-4 w-full border border-zinc-600">
+    <div className="flex flex-col p-4 w-full border-dashed border border-zinc-600 hover:border-zinc-400 hover:scale-110 duration-300 hover:bg-zinc-900 z-0 hover:z-10">
       <div className="flex items-center justify-between">
-        <p className="text-zinc-50 font-bold text-base">{feature.title}</p>
+        <p className="text-transparent font-bold bg-clip-text bg-gradient-to-br from-violet-400 to-slate-100 text-base">
+          {feature.title}
+        </p>
         {feature.comingSoon && (
           <span className="text-violet-400 bg-violet-700/30 border-violet-600/50 border rounded uppercase text-[9px] px-2 py-1">
             Coming Soon{" "}

@@ -17,7 +17,7 @@ export const features: TFeature[] = [
     id: 2,
     title: "Private",
     description:
-      "This is just a prettier, more accessible wrapper around OpenAI's API. We don't store any of your data on our servers. Anything to be stored, is stored on your device, and never leaves it.",
+      "We don't store any of your data on our servers. Anything to be stored, is stored on your device, and never leaves it.",
     comingSoon: false,
   },
   {
