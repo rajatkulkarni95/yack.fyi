@@ -7,7 +7,7 @@ export default function Document() {
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       <meta name="theme-color" content="#2B125A" />
       <title>Yack</title>
-      <body>
+      <body className="bg-black">
         <Main />
         <NextScript />
       </body>
