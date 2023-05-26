@@ -54,9 +54,7 @@ export default function Home({
               <DownloadLink
                 label="for Apple Silicon"
                 subtitle="2020 and later models"
-                icon={
-                  <DownloadIcon className="w-4 h-4 mr-1.5 text-slate-900" />
-                }
+                icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-50" />}
                 href={data.downloadLinks.arm}
               />
               <DownloadLink
@@ -105,7 +103,7 @@ export default function Home({
           <DownloadLink
             label="for Apple Silicon"
             subtitle="2020 and later models"
-            icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-900" />}
+            icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-50" />}
             href={data.downloadLinks.arm}
           />
           <DownloadLink
