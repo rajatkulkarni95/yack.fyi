@@ -30,9 +30,9 @@ export default function Home({
             <Link href="/changelog">
               <Capsule
                 text={`v${data.version} is out! See what's new`}
-                additionalStyles="mb-2 xl:mb-4 hover:bg-blue-700/20 pointer"
+                additionalStyles="mb-2 xl:mb-4 hover:bg-violet-700/20 pointer"
                 icon={
-                  <RightArrow className="w-4 h-4 text-blue-300 group-hover:text-blue-400 ml-2" />
+                  <RightArrow className="w-4 h-4 text-violet-300 group-hover:text-violet-400 ml-2" />
                 }
               />
             </Link>

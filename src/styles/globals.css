@@ -13,3 +13,23 @@
 ::selection {
   @apply bg-violet-600 text-slate-50;
 }
+
+::-webkit-scrollbar {
+  @apply w-2 h-2 bg-zinc-700;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-500 rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400;
+}
+
+.hide_scrollbar::-webkit-scrollbar {
+  display: none !important;
+}

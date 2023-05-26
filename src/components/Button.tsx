@@ -18,9 +18,9 @@ export const DownloadLink = ({
   return (
     <div className={`flex flex-col ${style}`}>
       <a
-        className={`px-3.5 py-2 border rounded flex items-center font-medium text-sm ${
+        className={`px-3.5 py-2 border rounded flex items-center font-medium text-sm hover:scale-105 hover:z-10 duration-300 ${
           type === "primary"
-            ? "border-slate-700  bg-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-800"
+            ? "border-transparent  bg-slate-100 text-slate-900 hover:bg-slate-50"
             : ""
         } ${
           type === "secondary"

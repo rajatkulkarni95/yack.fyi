@@ -12,9 +12,9 @@ const Capsule = ({ text, type = "info", additionalStyles, icon }: TProps) => {
 
   switch (type) {
     case "info":
-      typeBg = "bg-blue-800/20";
-      typeColor = "text-blue-300";
-      typeBorder = "border-blue-500/50";
+      typeBg = "bg-violet-800/20";
+      typeColor = "text-violet-300";
+      typeBorder = "border-violet-500/50";
       break;
     case "warning":
       typeBg = "bg-yellow-800/20";
