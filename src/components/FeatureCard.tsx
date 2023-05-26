@@ -7,7 +7,7 @@ import { TFeature } from "~/data/features";
 
 const FeatureCard = ({ feature }: { feature: TFeature }) => {
   return (
-    <div className="flex flex-col p-4 w-full border-dashed border border-zinc-600 hover:border-zinc-400 hover:scale-110 duration-300 hover:bg-zinc-900 z-0 hover:z-10">
+    <div className="flex flex-col p-4 w-full border-dashed border border-zinc-600 hover:border-zinc-400 md:hover:scale-110 duration-300 hover:bg-zinc-900 z-0 hover:z-10">
       <div className="flex items-center justify-between">
         <p className="text-transparent font-bold bg-clip-text bg-gradient-to-br from-violet-400 to-slate-100 text-base">
           {feature.title}
