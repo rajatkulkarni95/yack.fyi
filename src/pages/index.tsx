@@ -116,6 +116,15 @@ export default function Home({
           />
         </div>
       </section>
+      <p className="text-xs text-zinc-400 w-full text-center">
+        Built by{" "}
+        <a
+          href="https://twitter.com/JokingRajat"
+          className="underline hover:text-amber-400"
+        >
+          Rajat
+        </a>
+      </p>
     </main>
   );
 }
