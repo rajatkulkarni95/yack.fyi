@@ -1,5 +1,5 @@
 export const baseUrl =
-  process.env.NODE_ENV === "production" ? "https://yack.fyi/" : "";
+  process.env.NODE_ENV === "production" ? "https://yack.fyi" : "";
 
 export const defaultSEO = {
   title: "yack",
