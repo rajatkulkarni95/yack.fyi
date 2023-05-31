@@ -1,11 +1,12 @@
 import { DownloadLink } from "~/components/Button";
+import Link from 'next/link'
 import { DownloadIcon, LogoLarge, RightArrow } from "~/svg";
  
  
 <main className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-[rgb(25,14,43)]`}>
   <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
      <div className="flex items-center justify-between">
-        <LogoLarge className="w-20 xl:w-24 text-white" />
+        <Link href='/'><LogoLarge className="w-20 xl:w-24 text-white" /></Link>
       </div>
   </section>
 
