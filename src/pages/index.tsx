@@ -1,30 +1,26 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Link from "next/link";
-import { DownloadLink } from "~/components/Button";
-import Capsule from "~/components/Capsule";
-import FeatureCard from "~/components/FeatureCard";
-import { features } from "~/data/features";
-import { DownloadIcon, LogoLarge, RightArrow } from "~/svg";
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
+import React from 'react'
+import { DownloadLink } from '~/components/Button'
+import Capsule from '~/components/Capsule'
+import FeatureCard from '~/components/FeatureCard'
+import { features } from '~/data/features'
+import { DownloadIcon, LogoLarge, RightArrow } from '~/svg'
 
 type TRelease = {
-  version: string;
+  version: string
   downloadLinks: {
-    intel: string;
-    arm: string;
-  };
-};
+    intel: string
+    arm: string
+  }
+}
 
 export default function Home({
   data,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <main
-      className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
-    >
+    <React.Fragment>
       <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
-        <div className="flex items-center justify-between">
-          <LogoLarge className="w-20 xl:w-24 text-white" />
-        </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">
             {/* <Link href="/changelog"> */}
@@ -41,10 +37,10 @@ export default function Home({
             </h1>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
               Yack is a MacOS app that lets you access ChatGPT right at your
-              fingertips.{" "}
+              fingertips.{' '}
             </p>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
-              Your favourite AI assistant now lives in your{" "}
+              Your favourite AI assistant now lives in your{' '}
               <strong className="text-slate-50 border-b border-dotted border-slate-300 pb-0.5">
                 menu bar
               </strong>
@@ -117,7 +113,7 @@ export default function Home({
         </div>
       </section>
       <p className="text-xs text-zinc-400 w-full text-center">
-        Built by{" "}
+        Built by{' '}
         <a
           href="https://twitter.com/JokingRajat"
           className="underline hover:text-amber-400"
@@ -125,23 +121,23 @@ export default function Home({
           Rajat
         </a>
       </p>
-    </main>
-  );
+    </React.Fragment>
+  )
 }
 
 export const getStaticProps: GetStaticProps<{
-  data: TRelease;
+  data: TRelease
 }> = async () => {
   const getUpdaterJson = async () => {
-    const response = await fetch(`${process.env.R2_PUBLIC_URL}/updater.json`);
-    const data = await response.json();
-    return data;
-  };
+    const response = await fetch(`${process.env.R2_PUBLIC_URL}/updater.json`)
+    const data = await response.json()
+    return data
+  }
 
-  const response = await getUpdaterJson();
+  const response = await getUpdaterJson()
 
-  let latestVersion = response.version;
-  latestVersion = latestVersion.replace("v", "");
+  let latestVersion = response.version
+  latestVersion = latestVersion.replace('v', '')
 
   return {
     props: {
@@ -154,5 +150,5 @@ export const getStaticProps: GetStaticProps<{
       },
     },
     revalidate: 3600,
-  };
-};
+  }
+}

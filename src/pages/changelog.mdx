@@ -1,0 +1,82 @@
+import { DownloadLink } from "~/components/Button";
+import { DownloadIcon, LogoLarge, RightArrow } from "~/svg";
+ 
+<div className='prose dark:prose-invert prose-zinc w-full mx-auto mt-16 text-center'>
+
+# Changelog
+
+<p className="text-center">How Yack gets better every day</p>
+
+---
+
+May 31st, 2023
+
+## v0.5.7
+
+**Improvements ✨**
+
+- Better Error messaging for when the API fails.
+
+- If for some reason the API key is invalid when on the chat screen, show the relevant error message and navigate the user back to Token Registration to input the correct API key
+
+<br />
+May 29th 2023
+
+## v0.5.6
+
+**Improvements ✨**
+
+- Added support for draggable windows.
+
+- Added support for resizing windows. Both window size and position is saved locally, and restored when you relaunch the app.
+
+- Reduced app update check interval from 60 mins to 15 mins.
+
+**Fixes 🔧**
+
+- `Check Updates` button now correctly fires an emit to check for an update
+
+- Reworked prompt submission to be done on plain `Enter` instead of `Cmd + Enter`. `Shift + Enter` is still supported to add break lines in the input box.
+
+<br />
+May 23rd 2023
+
+## v0.5.5
+
+**Fixes 🔧**
+
+- Disable clicking on New Chat, or pressing `Cmd + N` if a stream is ongoing (Since it results in incomplete chats, and breaks responses)
+
+  {/* - Disable clicking on New Chat, or pressing `Cmd + N` if a stream is ongoing (Since it results in incomplete chats, and breaks responses) */}
+
+<br />
+May 20th 2023
+
+## V0.5.4
+
+**Improvements ✨**
+
+- You can now delete historical chats using `Cmd + Backspace` by highlighting the chat title in the history page.
+
+- Add an info message when the stream is closed abruptly.
+
+- Add keyboard shortcuts legend for the history page. (Navigation, Selection and Deletions)
+
+- Add basic note about AI inaccuracies and training data threshold.
+
+<br />
+May 20th 2023
+
+## v0.5.3
+
+**Improvements ✨**
+
+- Replace `showdown` with `react-markdown` for parsing markdown to HTML.
+
+- Better syntax highlighting and code block copying controls.
+
+- Increase chat bubble width size from 70% to 80% of the available screen.
+
+- Name | Place | Animal | Thing - Added support for markdown table renders. Ask the AI to give you answers in a table format, and watch Yack prettify it!
+
+</div>
