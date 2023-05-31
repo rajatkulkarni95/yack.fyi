@@ -97,7 +97,7 @@ export default function Home({
           possible. Lightweight, fast, and simple.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-8 mt-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8 mt-8">
           {features.map((feature) => (
             <FeatureCard feature={feature} key={feature.id} />
           ))}
