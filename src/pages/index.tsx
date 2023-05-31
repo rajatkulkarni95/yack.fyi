@@ -1,18 +1,19 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Link from "next/link";
-import { DownloadLink } from "~/components/Button";
-import Capsule from "~/components/Capsule";
-import FeatureCard from "~/components/FeatureCard";
-import { features } from "~/data/features";
-import { DownloadIcon, LogoLarge, RightArrow } from "~/svg";
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
+import React from 'react'
+import { DownloadLink } from '~/components/Button'
+import Capsule from '~/components/Capsule'
+import FeatureCard from '~/components/FeatureCard'
+import { features } from '~/data/features'
+import { DownloadIcon, LogoLarge, RightArrow } from '~/svg'
 
 type TRelease = {
-  version: string;
+  version: string
   downloadLinks: {
-    intel: string;
-    arm: string;
-  };
-};
+    intel: string
+    arm: string
+  }
+}
 
 export default function Home({
   data,
@@ -23,28 +24,35 @@ export default function Home({
     >
       <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
         <div className="flex items-center justify-between">
-          <LogoLarge className="w-20 xl:w-24 text-white" />
+          <Link href="/">
+            <LogoLarge className="w-20 xl:w-24 text-white" />
+          </Link>
+          <Link href="/changelog">
+            <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
+              Changelog
+            </div>
+          </Link>
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">
-            {/* <Link href="/changelog"> */}
-            <Capsule
-              text={`v${data.version} is out!`}
-              additionalStyles="mb-2 xl:mb-4 hover:bg-violet-700/20 pointer"
-              icon={
-                <RightArrow className="w-4 h-4 rotate-90 text-violet-300 group-hover:text-violet-400 ml-1" />
-              }
-            />
-            {/* </Link> */}
+            <Link href="/changelog">
+              <Capsule
+                text={`v${data.version} is out! See what's new`}
+                additionalStyles="mb-2 xl:mb-4 hover:bg-violet-700/20 pointer"
+                icon={
+                  <RightArrow className="w-4 h-4 text-violet-300 group-hover:text-violet-400 ml-1" />
+                }
+              />
+            </Link>
             <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
               Get going faster.
             </h1>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
               Yack is a MacOS app that lets you access ChatGPT right at your
-              fingertips.{" "}
+              fingertips.{' '}
             </p>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
-              Your favourite AI assistant now lives in your{" "}
+              Your favourite AI assistant now lives in your{' '}
               <strong className="text-slate-50 border-b border-dotted border-slate-300 pb-0.5">
                 menu bar
               </strong>
@@ -117,7 +125,7 @@ export default function Home({
         </div>
       </section>
       <p className="text-xs text-zinc-400 w-full text-center">
-        Built by{" "}
+        Built by{' '}
         <a
           href="https://twitter.com/JokingRajat"
           className="underline hover:text-amber-400"
@@ -126,22 +134,22 @@ export default function Home({
         </a>
       </p>
     </main>
-  );
+  )
 }
 
 export const getStaticProps: GetStaticProps<{
-  data: TRelease;
+  data: TRelease
 }> = async () => {
   const getUpdaterJson = async () => {
-    const response = await fetch(`${process.env.R2_PUBLIC_URL}/updater.json`);
-    const data = await response.json();
-    return data;
-  };
+    const response = await fetch(`${process.env.R2_PUBLIC_URL}/updater.json`)
+    const data = await response.json()
+    return data
+  }
 
-  const response = await getUpdaterJson();
+  const response = await getUpdaterJson()
 
-  let latestVersion = response.version;
-  latestVersion = latestVersion.replace("v", "");
+  let latestVersion = response.version
+  latestVersion = latestVersion.replace('v', '')
 
   return {
     props: {
@@ -154,5 +162,5 @@ export const getStaticProps: GetStaticProps<{
       },
     },
     revalidate: 3600,
-  };
-};
+  }
+}
