@@ -19,8 +19,13 @@ export default function Home({
   data,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <React.Fragment>
+    <main
+      className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
+    >
       <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
+        <div className="flex items-center justify-between">
+          <LogoLarge className="w-20 xl:w-24 text-white" />
+        </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">
             {/* <Link href="/changelog"> */}
@@ -121,7 +126,7 @@ export default function Home({
           Rajat
         </a>
       </p>
-    </React.Fragment>
+    </main>
   )
 }
 
