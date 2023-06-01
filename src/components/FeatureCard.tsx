@@ -3,7 +3,7 @@
 // Colors should be some variation of the following:
 // red, green, blue, yellow, purple, pink, orange, teal, indigo, gray, coolGray, trueGray, warmGray, cyan, fuchsia, rose
 
-import { TFeature } from "~/data/features";
+import { TFeature } from '~/data/features'
 
 const FeatureCard = ({ feature }: { feature: TFeature }) => {
   return (
@@ -12,15 +12,15 @@ const FeatureCard = ({ feature }: { feature: TFeature }) => {
         <p className="text-violet-300 font-bold text-base">{feature.title}</p>
         {feature.comingSoon && (
           <span className="text-violet-400 bg-violet-700/30 border-violet-600/50 border rounded uppercase text-[9px] px-2 py-1">
-            Coming Soon{" "}
+            Coming Soon{' '}
           </span>
         )}
       </div>
-      <p className="text-zinc-200 font-normal mt-4 text-sm">
+      <p className="text-zinc-200 font-normal !mt-4 text-sm">
         {feature.description}
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default FeatureCard;
+export default FeatureCard
