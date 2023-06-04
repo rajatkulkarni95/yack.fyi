@@ -65,6 +65,9 @@ export default function Home({
               </strong>
               .
             </p>
+            <p className="!mt-4 text-slate-300 text-sm">
+              Requires an Open AI key for usage.
+            </p>
             <div className="flex items-center mt-8">
               <DownloadLink
                 label="for Apple Silicon"
