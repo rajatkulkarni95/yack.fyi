@@ -27,11 +27,18 @@ export default function Home({
           <Link href="/">
             <LogoLarge className="w-20 xl:w-24 text-white" />
           </Link>
-          <Link href="/changelog">
-            <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
-              Changelog
-            </div>
-          </Link>
+          <div className="flex items-center justify-between">
+            <Link href="/pricing">
+              <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
+                Pricing
+              </div>
+            </Link>
+            <Link href="/changelog">
+              <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
+                Changelog
+              </div>
+            </Link>
+          </div>
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">

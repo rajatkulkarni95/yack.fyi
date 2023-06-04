@@ -1,0 +1,42 @@
+import React from 'react'
+import Link from 'next/link'
+import { LogoLarge } from '~/svg'
+
+<main
+className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}>
+
+{' '}
+
+<section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
+  <div className="flex items-center justify-between">
+    <Link href="/">
+      <LogoLarge className="w-20 xl:w-24 text-white" />
+    </Link>
+    <Link href="/changelog">
+      <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
+        Changelog
+      </div>
+    </Link>
+  </div>
+</section>
+
+  <div className="prose dark:prose-invert prose-zinc mx-auto mt-16 text-center">
+# Pricing
+    <div className='mt-8' />
+
+Yack is still in beta, and under active development. We're working hard to make it the best it can be, and we're excited to share it with you.
+
+---
+
+As far as how much it will cost, we're still figuring that out. We want to make sure that Yack is affordable for everyone, and we're working on a pricing model that will make that possible. We'll be sure to let you know as soon as we have more information.
+
+---
+
+What we are certain of is, it would not be a subscription. We don't like subscriptions, and we don't want to force you to pay for something each month in hopes of upgrades and improvements.
+
+**Pricing will be one-time, and you'll get all future updates for free.**
+
+---
+
+  </div>
+</main>
